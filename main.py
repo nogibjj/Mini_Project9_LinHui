@@ -1,19 +1,21 @@
-"""
-Main cli or app entry point
-"""
+import pandas as pd
+import matplotlib.pyplot as plt
 
-from mylib.calculator import add
-import click
+df = pd.read_csv('AAPL.csv', index_col = 0)\
+    .fillna(method = 'backfill')
+print(df.head())
 
-#var=1;var=2
+summary_stats = pd.concat([df.describe(include='all').drop('count').T, \
+                           df.median().rename('median')], axis=1).T.round(decimals=2)
+print(summary_stats)
 
-@click.command("add")
-@click.argument("a", type=int)
-@click.argument("b", type=int)
-def add_cli(a, b):
-    click.echo(add(a, b))
+plt.plot(df['Open'])
+plt.xticks(df.index[::40], rotation=20)
+plt.xlabel('Date')
+plt.ylabel('Open Price')
+plt.title('Open price for AAPL in the past year')
+#plt.savefig('Open price figure.png')
+plt.show()
 
-
-if __name__ == "__main__":
-    # pylint: disable=no-value-for-parameter
-    add_cli()
+average_close = df['Close'].mean()
+print(f"Average Closing Price: {average_close}")
