@@ -1,3 +1,5 @@
+[![CI](https://github.com/nogibjj/Mini_Project9_LinHui/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Mini_Project9_LinHui/actions/workflows/cicd.yml)
+
 # Mini Project 9 IDS 760
 
 This project showcases the setup and utilization of a cloud-hosted Jupyter Notebook, specifically using Google Colab, to perform data manipulation tasks on a sample dataset.
@@ -32,7 +34,9 @@ Link to the cloud-hosted notebook: [Google Colab](https://colab.research.google.
 
 Average Closing Price: 160.652119692
 
-## This template comes from my previous project, which can be found on linhui7's repo.
+
+
+### This template comes from my previous project, which can be found on linhui7's repo.
 
 
 
